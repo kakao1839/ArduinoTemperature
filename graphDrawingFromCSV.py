@@ -1,4 +1,3 @@
-# IamHIyokoooooooooo
 import csv
 import matplotlib.pyplot as plt
 
@@ -16,6 +15,6 @@ with open("book_rank.csv", "r", encoding="utf-8") as f:
 
 #グラフ描画
 plt.plot(rank_list, price_list)
-plt.xlabel("rank[th]")
-plt.ylabel("price[yen]")
+plt.xlabel("temperature[℃]")
+plt.ylabel("time[m]")
 plt.show()
