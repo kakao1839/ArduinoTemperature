@@ -20,7 +20,7 @@ while (i != 24):  # 24時間分計測＆保存(1時間×24回)
         writer.writerow(
             ["year", "month", "day", "hour", "minute", "second", "temp[℃]", "humid[%]", "heat index"])  # 1行目：見出し
 
-        while (hourstr == hourstr_ser):  # 1時間データを書き込む
+        while hourstr == hourstr_ser:  # 1時間データを書き込む
 
             # 情報の取得
             temp = float(ser.readline().rstrip().decode(encoding='utf-8'))  # 温度
