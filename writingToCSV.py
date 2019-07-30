@@ -4,7 +4,7 @@ import serial
 import datetime
 
 i = 0  # カウント用
-ser = serial.Serial("COM3")  # Arduinoが接続されているCOMポートを指定
+ser = serial.Serial('COM4', 9600, timeout=1)  # Arduinoが接続されているCOMポートを指定
 
 while (i != 24):  # 24時間分計測＆保存(1時間×24回)
 
@@ -26,7 +26,7 @@ while (i != 24):  # 24時間分計測＆保存(1時間×24回)
             # 情報の取得
             temp = float(ser.readline().rstrip().decode(encoding='utf-8'))  # 温度
             humid = float(ser.readline().rstrip().decode(encoding='utf-8'))  # 湿度
-            hi = 0.8 * temp + 0.01 * humid * (0.99 * temp - 14.3) + 46.3;  # 不快指数
+            hi = 0.8 * temp + 0.01 * humid * (0.99 * temp - 14.3) + 46.3  # 不快指数
             now_ser = datetime.datetime.today()  # 現在時刻
             # [年，月，日，時，分，秒，温度，湿度，不快指数]
             data = [now_ser.year, now_ser.month, now_ser.day, now_ser.hour,
