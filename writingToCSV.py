@@ -4,7 +4,7 @@ import serial
 import datetime
 
 i = 0  # カウント用
-ser = serial.Serial('COM4', 9600, timeout=1)  # Arduinoが接続されているCOMポートを指定
+ser = serial.Serial('COM4')  # Arduinoが接続されているCOMポートを指定
 
 while (i != 24):  # 24時間分計測＆保存(1時間×24回)
 
